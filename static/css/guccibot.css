@@ -571,6 +571,47 @@
     .engine-split { grid-template-columns: 1fr; }
     .disc-row { grid-template-columns: 80px 1fr; }
     .disc-status, .disc-focus { display: none; }
+
+    /* Real mobile pass, added 2026-09-02 -- everything below this point
+       is new. Everything above was the one narrow override this
+       breakpoint had before (theme-card hover transforms + two grid
+       collapses), nowhere near a real responsive treatment. */
+
+    /* Nav -- 6 links (Format/Engine/Themes/Trainer/Changelog/Download)
+       at desktop gap+font-size don't fit a phone-width screen at all.
+       Shrink both, and make horizontal scroll the fallback instead of
+       letting it visibly overflow/overlap if it still doesn't all fit
+       on the narrowest phones. */
+    nav { padding: 0 1rem; }
+    .nav-logo { font-size: 1.25rem; flex-shrink: 0; }
+    .nav-links {
+      gap: 1rem;
+      overflow-x: auto;
+      max-width: 62vw;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { font-size: 0.6rem; white-space: nowrap; }
+
+    /* Hero -- the 4-item stats row is centered+absolute at desktop
+       gap/size, which overflows a phone viewport on BOTH edges (it's
+       wider than the screen, centered, so it runs off each side
+       instead of just one). */
+    .hero { padding: 5rem 1.25rem 6rem; }
+    .hero-title { font-size: clamp(3.5rem, 16vw, 11rem); }
+    .hero-stats {
+      gap: 1.1rem;
+      font-size: 0.55rem;
+      max-width: 92vw;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-stats span { font-size: 1.1rem; }
+
+    /* Sections -- 6rem top/bottom padding on every section (desktop
+       value) is a lot of dead space on a phone's vertical scroll. */
+    section { padding: 3.5rem 1.25rem; }
+    .btn-download { padding: 16px 32px; font-size: 1.1rem; }
   }
 
   .engine-list {

@@ -37,6 +37,28 @@
     v.muted = true;
     v.play();
   });
+
+  // Mobile fix, 2026-09-02 (Nigel: no audio on /dropped/ on mobile).
+  // Real cause, not a bug in the sense of broken code: getting HERE
+  // is a full page navigation (the site-wide click handler does
+  // window.location.href), which doesn't count as a "user gesture" to
+  // mobile browsers' autoplay-with-sound policy the way it does on
+  // desktop -- iOS Safari in particular is far stricter than desktop
+  // Chrome about this. So the unmuted play() above reliably fails on
+  // phones and the muted fallback silently takes over -- the video
+  // plays, just without sound, exactly what was reported. The one
+  // thing mobile browsers DO honor is a genuine tap on the page
+  // itself, so the very first tap/click anywhere on THIS page (still
+  // no visible button -- same "nothing to click" feel as the rest of
+  // the gag) unmutes and retries with sound.
+  function unmuteOnFirstTouch() {
+    v.muted = false;
+    v.play().catch(function () {});
+    document.removeEventListener('touchstart', unmuteOnFirstTouch);
+    document.removeEventListener('click', unmuteOnFirstTouch);
+  }
+  document.addEventListener('touchstart', unmuteOnFirstTouch);
+  document.addEventListener('click', unmuteOnFirstTouch);
 </script>
 </body>
 </html>
