@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GucciBot</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+    height: 100%;
+  }
+  video {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+<video id="v" src="https://github.com/guccimanefan/GucciBot/releases/download/site-assets/0901.1.mp4" autoplay loop playsinline></video>
+<script>
+  // No controls attribute at all -- on purpose, this page is the whole gag.
+  // Most browsers block autoplay-with-sound unless it follows a real user
+  // gesture; this page is only ever reached via an actual click (see the
+  // site-wide handler in static/js/guccibot.js), so try unmuted first and
+  // only fall back to muted if the browser still blocks it.
+  var v = document.getElementById('v');
+  v.play().catch(function () {
+    v.muted = true;
+    v.play();
+  });
+</script>
+</body>
+</html>

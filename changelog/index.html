@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — GucciBot</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/guccibot.css">
+<style>
+  /* Changelog-page-only additions -- kept separate from the shared
+     stylesheet since nothing else on the site needs these. */
+  .changelog-hero {
+    padding: 10rem 2rem 3rem;
+    text-align: center;
+  }
+  .changelog-list {
+    max-width: 760px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+  }
+  .changelog-entry {
+    background: var(--near-black);
+    padding: 2rem 2.25rem;
+  }
+  .changelog-version {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .changelog-version .current-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 3px 10px;
+    margin-left: 12px;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .changelog-body {
+    font-size: 0.78rem;
+    color: #888;
+    line-height: 1.9;
+  }
+  .changelog-body a { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">GucciBot</div>
+  <ul class="nav-links">
+    <li><a href="/#features">Format</a></li>
+    <li><a href="/#engine">Engine</a></li>
+    <li><a href="/#themes">Themes</a></li>
+    <li><a href="/#trainer">Trainer</a></li>
+    <li><a href="/changelog/">Changelog</a></li>
+    <li><a href="/#download">Download</a></li>
+  </ul>
+</nav>
+
+<div class="changelog-hero reveal">
+  <div class="section-label" style="justify-content:center">Changelog</div>
+  <h2 class="section-title">What Actually Changed.</h2>
+  <p style="max-width:560px; font-size:0.8rem; color:#888; line-height:1.9; margin:1rem auto 0;">
+    Every real release, newest first. Recorded starting from 1.4 &mdash; earlier versions predate this page keeping history at all.
+  </p>
+</div>
+
+<section style="padding-top:0">
+  <div class="changelog-list reveal">
+
+    <div class="changelog-entry">
+      <div class="changelog-version">1.5.2 <span class="current-tag">Current</span></div>
+      <div class="changelog-body">LemonadeBot&rsquo;s Big Brrr track got swapped for the correct one &mdash; a download-tool mixup had bundled the wrong song entirely. Fixed.</div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-version">1.5.1</div>
+      <div class="changelog-body">A credits fix. 1.5 shipped Click Indicators &mdash; real scoring, matched Perfect / OK / Miss against the macro&rsquo;s own click bar &mdash; without ever crediting where the idea actually started: <a href="https://github.com/Bogdaner09/mod">Bogdaner09&rsquo;s mod</a>, which Nigel found and GucciBot built its own version around. Fixed.</div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-version">1.5.0</div>
+      <div class="changelog-body">Click Indicators got real scoring &mdash; every press and release you make against the macro&rsquo;s own click bar gets matched and rated Perfect / OK / Miss, with the last timing delta shown live. The Jupiter My Favourite Trainer also picked up Video Mode: a full-screen review overlay that plays your own footage back riding the exact same click-bar clock as the macro, plus an alignment tool that scrubs the video directly to the first click instead of nudging an offset slider by hand. Improved frame window performance when using an external Practice Fix &mdash; native Practice Fix coming soon, hopefully. Five new themes joined the lineup &mdash; RomoBot, GrizzleyBot, Red Kingdom, LemonadeBot, and BrrrBot, the last with its own live snow overlay &mdash; and you can now build your own: full color palette, your own extension, your own quotes, even your own Big Brrr track.</div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-version">1.4.0</div>
+      <div class="changelog-body">Compact mode finally does what it&rsquo;s named for &mdash; save, name, run Calculate, and pick a macro without leaving the corner panel. A death-mid-click recording bug that&rsquo;s been reported (and mis-fixed) more than once finally got tracked down properly, using Juice&rsquo;s own fix for it instead of guessing again. Rendering got real upgrades too: the FFmpeg setup that used to be an easy-to-miss manual step for every fresh install now just ships with the mod, frame-window cues actually make it into the output video, and there&rsquo;s an optional 4-track split &mdash; combined, music, SFX, and frame-window cues on their own tracks. Also: SaweetieBot and MaybachBot joined the lineup, MaybachBot with its own Big Brrr track.</div>
+    </div>
+
+  </div>
+  <p style="max-width:760px; margin:3rem auto 0; text-align:center; font-size:0.7rem; color:#555;">
+    Full commit-level history: <a href="https://github.com/guccimanefan/GucciBot/releases" style="color:var(--gold)">github.com/guccimanefan/GucciBot/releases</a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GucciBot</div>
+  <div class="footer-tagline">Frame perfect &nbsp;·&nbsp; GBR6 &nbsp;·&nbsp; All four disciplines &nbsp;·&nbsp; Brrr.</div>
+  <div style="font-size:0.6rem; color:#333; letter-spacing:1px">guccimanefan.guccibot</div>
+</footer>
+
+<script src="/static/js/guccibot.js"></script>
+</body>
+</html>
