@@ -41,19 +41,20 @@ document.querySelectorAll('.feature-grid.reveal, .themes-grid.reveal, .credits-g
 });
 
 // Gag, Nigel's ask: clicking anywhere that ISN'T a real interactive
-// control bounces the whole page to /oops/ -- just a fullscreen video,
-// no controls, nothing else. Deliberately scoped to real <a>/<button>/
-// form controls only, so every actual link and button (nav, download,
-// changelog, credits links) keeps working normally -- but things that
-// only LOOK clickable (theme cards, feature cards, credit cards, disc
-// rows -- styled with a pointer cursor but no real destination) count
-// as "not a button or anything" and trigger it, which is the whole bit.
-// Guarded to skip on /oops/ itself so the gag page doesn't gag itself.
-if (!location.pathname.startsWith('/oops')) {
+// control bounces the whole page to /dropped/ -- just a fullscreen
+// video, no controls, nothing else. Deliberately scoped to real
+// <a>/<button>/form controls only, so every actual link and button
+// (nav, download, changelog, credits links) keeps working normally --
+// but things that only LOOK clickable (theme cards, feature cards,
+// credit cards, disc rows -- styled with a pointer cursor but no real
+// destination) count as "not a button or anything" and trigger it,
+// which is the whole bit.
+// Guarded to skip on /dropped/ itself so the gag page doesn't gag itself.
+if (!location.pathname.startsWith('/dropped')) {
   document.addEventListener('click', (e) => {
     const real = e.target.closest('a, button, input, textarea, select, label, [role="button"], [onclick]');
     if (!real) {
-      window.location.href = '/oops/';
+      window.location.href = '/dropped/';
     }
   });
 }
