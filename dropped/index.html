@@ -20,40 +20,65 @@
     height: 100vh;
     object-fit: contain;
   }
+  /* Mobile-only "tap for sound" hint, added 2026-09-02. Real reason
+     this page specifically still needs it even after the site-wide
+     click gag moved to an in-page overlay (see static/js/guccibot.js):
+     a DIRECT visit to this URL (a shared link, a bookmark, typing it
+     in) genuinely has no prior click to reuse for the autoplay-with-
+     sound permission mobile browsers require -- there's no gesture at
+     all before the page even loads. Nigel asked for something more
+     discoverable than the invisible first-tap fallback below; this is
+     that, without turning into an actual playback control -- just a
+     small, honest label, no play bar. Hidden entirely on desktop
+     (where the fallback below usually isn't even needed) via the
+     pointer:coarse check, which targets touch input specifically
+     rather than just guessing from screen width. */
+  #sound-hint {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 2.5rem;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.55);
+    font: 0.65rem/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    pointer-events: none;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  }
+  @media (pointer: coarse) {
+    #sound-hint { display: block; }
+  }
 </style>
 </head>
 <body>
 <video id="v" autoplay loop playsinline>
   <source src="https://github.com/guccimanefan/guccibot-site/releases/download/site-video/0901.1.mp4" type="video/mp4">
 </video>
+<div id="sound-hint">🔊 tap for sound</div>
 <script>
-  // No controls attribute at all -- on purpose, this page is the whole gag.
-  // Most browsers block autoplay-with-sound unless it follows a real user
-  // gesture; this page is only ever reached via an actual click (see the
-  // site-wide handler in static/js/guccibot.js), so try unmuted first and
-  // only fall back to muted if the browser still blocks it.
+  // No real controls at all -- on purpose, this page is the whole gag,
+  // the sound-hint label above is just text, not a player UI. This
+  // page is now reached two ways: a direct link/bookmark (no prior
+  // gesture at all), or as a fallback if the in-page overlay approach
+  // (static/js/guccibot.js) ever can't run for some reason. Either
+  // way, try unmuted first and only fall back to muted if the browser
+  // blocks it.
   var v = document.getElementById('v');
+  var hint = document.getElementById('sound-hint');
   v.play().catch(function () {
     v.muted = true;
     v.play();
   });
 
-  // Mobile fix, 2026-09-02 (Nigel: no audio on /dropped/ on mobile).
-  // Real cause, not a bug in the sense of broken code: getting HERE
-  // is a full page navigation (the site-wide click handler does
-  // window.location.href), which doesn't count as a "user gesture" to
-  // mobile browsers' autoplay-with-sound policy the way it does on
-  // desktop -- iOS Safari in particular is far stricter than desktop
-  // Chrome about this. So the unmuted play() above reliably fails on
-  // phones and the muted fallback silently takes over -- the video
-  // plays, just without sound, exactly what was reported. The one
-  // thing mobile browsers DO honor is a genuine tap on the page
-  // itself, so the very first tap/click anywhere on THIS page (still
-  // no visible button -- same "nothing to click" feel as the rest of
-  // the gag) unmutes and retries with sound.
+  // The one thing mobile browsers DO honor is a genuine tap on the
+  // page itself -- so the first tap/click anywhere unmutes and
+  // retries with sound, and also removes the hint once it's served
+  // its purpose.
   function unmuteOnFirstTouch() {
     v.muted = false;
     v.play().catch(function () {});
+    if (hint) hint.remove();
     document.removeEventListener('touchstart', unmuteOnFirstTouch);
     document.removeEventListener('click', unmuteOnFirstTouch);
   }

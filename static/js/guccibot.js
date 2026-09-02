@@ -41,20 +41,57 @@ document.querySelectorAll('.feature-grid.reveal, .themes-grid.reveal, .credits-g
 });
 
 // Gag, Nigel's ask: clicking anywhere that ISN'T a real interactive
-// control bounces the whole page to /dropped/ -- just a fullscreen
-// video, no controls, nothing else. Deliberately scoped to real
-// <a>/<button>/form controls only, so every actual link and button
-// (nav, download, changelog, credits links) keeps working normally --
-// but things that only LOOK clickable (theme cards, feature cards,
-// credit cards, disc rows -- styled with a pointer cursor but no real
-// destination) count as "not a button or anything" and trigger it,
-// which is the whole bit.
-// Guarded to skip on /dropped/ itself so the gag page doesn't gag itself.
+// control triggers a fullscreen video, no controls, nothing else.
+// Deliberately scoped to real <a>/<button>/form controls only, so
+// every actual link and button (nav, download, changelog, credits
+// links) keeps working normally -- but things that only LOOK clickable
+// (theme cards, feature cards, credit cards, disc rows -- styled with
+// a pointer cursor but no real destination) count as "not a button or
+// anything" and trigger it, which is the whole bit.
+//
+// Shows as an in-page overlay instead of navigating to /dropped/,
+// 2026-09-02 (was a real navigation before -- Nigel: no audio on
+// mobile, wanted something better than a "first tap" fallback).
+// Real mechanism, not a workaround: browsers only allow unmuted
+// autoplay when play() is called as part of an actual user gesture,
+// and mobile browsers (iOS Safari especially) are far stricter than
+// desktop about what still COUNTS as that gesture -- a full page
+// navigation to a brand new document loses it entirely, which is
+// exactly why the old version had no sound on phones. Doing this as
+// an overlay on the CURRENT page means video.play() runs synchronously
+// inside the same click handler as the actual click -- same gesture,
+// same document, no navigation in between -- so it's treated as a
+// real user-initiated play rather than background autoplay. This is
+// what fixes it for real, not the tap workaround.
+// /dropped/ itself still exists as a real standalone page (for direct
+// links) and keeps its own fallback for that case, since a direct
+// visit genuinely has no prior gesture to reuse.
+const DROPPED_VIDEO_URL = 'https://github.com/guccimanefan/guccibot-site/releases/download/site-video/0901.1.mp4';
+
+function showDropped() {
+  if (document.getElementById('dropped-overlay')) return; // already showing
+  const overlay = document.createElement('div');
+  overlay.id = 'dropped-overlay';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;background:#000;';
+  const video = document.createElement('video');
+  video.src = DROPPED_VIDEO_URL;
+  video.loop = true;
+  video.playsInline = true;
+  video.style.cssText = 'position:fixed;inset:0;width:100vw;height:100vh;object-fit:contain;';
+  overlay.appendChild(video);
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+  video.play().catch(() => {
+    video.muted = true;
+    video.play();
+  });
+}
+
 if (!location.pathname.startsWith('/dropped')) {
   document.addEventListener('click', (e) => {
     const real = e.target.closest('a, button, input, textarea, select, label, [role="button"], [onclick]');
     if (!real) {
-      window.location.href = '/dropped/';
+      showDropped();
     }
   });
 }

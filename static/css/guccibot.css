@@ -284,6 +284,7 @@
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
   }
 
   /* ── GBR6 FEATURE SECTION ── */
@@ -612,6 +613,14 @@
        value) is a lot of dead space on a phone's vertical scroll. */
     section { padding: 3.5rem 1.25rem; }
     .btn-download { padding: 16px 32px; font-size: 1.1rem; }
+
+    /* Section titles -- real bug Nigel caught: "Simultaneously." (the
+       Disciplines heading) was overflowing/clipping on phone widths.
+       The clamp()'s 2rem floor plus a long unbroken word was the
+       problem -- overflow-wrap above is the safety net for ANY title,
+       this just also lowers the floor so it doesn't need to rely on
+       that safety net kicking in to look right. */
+    .section-title { font-size: clamp(1.6rem, 8vw, 3.5rem); }
   }
 
   .engine-list {
