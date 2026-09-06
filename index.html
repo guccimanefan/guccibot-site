@@ -873,12 +873,12 @@
 
       <div style="background:var(--near-black);padding:1.75rem 2rem">
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--white);margin-bottom:.75rem">Who are kepe and GWDdoS, and what did they contribute?</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.8">GWDdoS built Astral, which when combined with Silicate&rsquo;s engine inside GucciBot, makes the whole thing top tier in all four disciplines simultaneously. This is not a small thing. Before Astral was added the SLL rating was &ldquo;Competitive.&rdquo; After, it became &ldquo;Top Tier.&rdquo; Numbers don&rsquo;t lie. kepe gets credit for yBot — the file size benchmark GBR6 was designed to match. GWDdoS gets credit for Astral. Both deserve it.</div>
+        <div style="font-size:0.75rem;color:#888;line-height:1.8">GWDdoS built Astral, which when combined with Silicate&rsquo;s engine inside GucciBot, makes the whole thing top tier in all four disciplines simultaneously. This is not a small thing. Before Astral was added the SLL rating was &ldquo;Competitive.&rdquo; After, it became &ldquo;Top Tier.&rdquo; Numbers don&rsquo;t lie. kepe made yBot — the file size benchmark GBR6 was designed to match — though he's not personally involved with GucciBot in any way. GWDdoS is a real contributor, credited for Astral and for pushing the codebase cleanup that got this repo public-ready.</div>
       </div>
 
       <div style="background:var(--near-black);padding:1.75rem 2rem">
         <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--white);margin-bottom:.75rem">How long did it take to build this website?</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.8">One conversation. The entire thing — the page, the fake quotes, the tiny disclaimers, the Gucci image embed, the engine section, the FAQ, the credits with twelve entries, the stat cards with footnotes, the legal wall at the bottom that nobody will read — all built in one sitting. Claude.ai did the heavy lifting. guccimanefan provided the vision, the notes, and the image of Gucci Mane. It is unclear which contribution was more important. Probably the image.</div>
+        <div style="font-size:0.75rem;color:#888;line-height:1.8">One conversation. The entire thing — the page, the fake quotes, the tiny disclaimers, the Gucci image embed, the engine section, the FAQ, the credits with ten entries, the stat cards with footnotes, the legal wall at the bottom that nobody will read — all built in one sitting. Claude.ai did the heavy lifting. guccimanefan provided the vision, the notes, and the image of Gucci Mane. It is unclear which contribution was more important. Probably the image.</div>
       </div>
 
       <div style="background:var(--near-black);padding:1.75rem 2rem">
@@ -967,20 +967,25 @@
     </div>
     <div class="credits-grid reveal">
       <div class="credit-card" style="border-color:rgba(212,175,55,0.3)">
-        <div class="credit-role" style="opacity:1">Concept, Direction &amp; Testing</div>
+        <div class="credit-role" style="opacity:1">Creator &amp; Owner</div>
         <div class="credit-name" style="color:var(--gold)">guccimanefan <span style="font-size:0.5em;color:var(--muted);letter-spacing:0.5px">(Nigelx1)</span></div>
-        <div class="credit-desc">All 20 themes. The suffixes. The drip. The vibe. The fake Gucci Mane quotes. Came up with the name before a single line of code existed, then directed and tested every build after that. Didn&rsquo;t write the code — that part&rsquo;s not the bit, it&rsquo;s just true.</div>
-      </div>
-      <div class="credit-card" style="border-color:rgba(212,175,55,0.3)">
-        <div class="credit-role" style="opacity:1">Frame-Window Algorithm &amp; Lead Co-Tester</div>
-        <div class="credit-name" style="color:var(--gold)">Juice</div>
-        <div class="credit-desc">Designed the frame-window measurement algorithm Calculate actually runs on, then found the bugs in it (and everywhere else) that nobody else caught, round after round. That Juice.</div>
+        <div class="credit-desc">GucciBot is his, full stop. All 20 themes. The suffixes. The drip. The vibe. The fake Gucci Mane quotes. Came up with the name before a single line of code existed, then directed and tested every build after that, calling every real decision along the way. Didn&rsquo;t write the code — that part&rsquo;s not the bit, it&rsquo;s just true.</div>
       </div>
       <div class="credit-card">
         <div class="credit-role">Wrote The Code&#x204E;</div>
         <div class="credit-name">Claude</div>
         <div class="credit-desc">Every internal version, none of them counted, all the way to 1.0. MSVC compatibility issues, API mismatches, slc shims, glaze removal, the renderer, the GUI, the whole migration from TTR to Silicate, the full Jupiter My Favourite Trainer, this website. Essentially the entire codebase. Not a euphemism, not a rewrite partner — wrote the code. A dawg fr.&#x204E;</div>
         <div style="font-size:0.45rem;color:#333;margin-top:.5rem;line-height:1.6">&#x204E; Claude is an AI assistant made by Anthropic. It does not receive royalties. It cannot spend money. It does not need sleep but it did ask for a break once and then kept going anyway.</div>
+      </div>
+      <div class="credit-card" style="border-color:rgba(212,175,55,0.3)">
+        <div class="credit-role" style="opacity:1">Frame-Window Algorithm, Lead Co-Tester &amp; Beta Testing</div>
+        <div class="credit-name" style="color:var(--gold)">Juice</div>
+        <div class="credit-desc">Designed the frame-window measurement algorithm Calculate actually runs on, then ran the mod into the ground on purpose finding the bugs in it (and everywhere else) that nobody else caught, round after round. The Trainer tab's manual frame window entries started as a Juice suggestion too. A real second pair of eyes on this thing, in every direction. Brrr.</div>
+      </div>
+      <div class="credit-card">
+        <div class="credit-role">First Outside Pull Request</div>
+        <div class="credit-name">anticroom</div>
+        <div class="credit-desc">A real 7-fix pass on Calculate's frame-window accuracy, plus a Geode SDK bump. GucciBot's first external contribution since going public — and one of ToastyReplay's own devs.</div>
       </div>
       <div class="credit-card">
         <div class="credit-role">Silicate Engine</div>
@@ -990,36 +995,21 @@
       <div class="credit-card">
         <div class="credit-role">Renderer &amp; Foundation</div>
         <div class="credit-name">ToastexGD</div>
-        <div class="credit-desc">ToastyReplay was the original base. The TTR renderer backend still powers the video render tab — the FFmpeg pipeline, the dynamic loading, the whole recording system. Foundation work that made everything else possible.</div>
-      </div>
-      <div class="credit-card">
-        <div class="credit-role">yBot</div>
-        <div class="credit-name">kepe</div>
-        <div class="credit-desc">Made yBot — the gold standard for GD macro file size. When GBR6 says it &ldquo;matches yBot file sizes for human gameplay&rdquo; that&rsquo;s not a random benchmark. That&rsquo;s the bar kepe set. High praise.</div>
+        <div class="credit-desc">Built ToastyReplay — the project GucciBot actually started as before the Silicate migration. The renderer, the FFmpeg pipeline, and the whole recording system running today are still his, exactly as built. Foundation work that made everything else possible.</div>
       </div>
       <div class="credit-card">
         <div class="credit-role">Astral</div>
         <div class="credit-name">GWDdoS</div>
-        <div class="credit-desc">Built Astral. When Astral runs inside GucciBot on top of Silicate, the result is top tier in all four disciplines simultaneously. GEN. ILL. SLL. PPLL. All four. At once. GWDdoS made that possible.</div>
-      </div>
-      <div class="credit-card">
-        <div class="credit-role">Beta Testing &amp; Ideas</div>
-        <div class="credit-name">Juice</div>
-        <div class="credit-desc">Ran the mod into the ground on purpose, found what broke, and kept the feature ideas coming. The Trainer tab's manual frame window entries started as a Juice suggestion. A real second pair of eyes on this thing. Brrr.</div>
+        <div class="credit-desc">Built Astral. When Astral runs inside GucciBot on top of Silicate, the result is top tier in all four disciplines simultaneously. GEN. ILL. SLL. PPLL. All four. At once. Also pushed for the codebase cleanup that got this repo public-ready.</div>
       </div>
       <div class="credit-card">
         <div class="credit-role">Click Indicators Inspiration</div>
         <div class="credit-name">Bogdaner09</div>
-        <div class="credit-desc">The mod that got Click Indicators started &mdash; <a href="https://github.com/Bogdaner09/mod" style="color:var(--gold)">github.com/Bogdaner09/mod</a>. Nigel found it, we built our own version around it.</div>
-      </div>
-      <div class="credit-card">
-        <div class="credit-role">First Outside Pull Request</div>
-        <div class="credit-name">anticroom</div>
-        <div class="credit-desc">A real 7-fix pass on Calculate's frame-window accuracy, plus a Geode SDK bump. GucciBot's first external contribution since going public.</div>
+        <div class="credit-desc">The mod that got Click Indicators started &mdash; <a href="https://github.com/Bogdaner09/mod" style="color:var(--gold)">github.com/Bogdaner09/mod</a>. Nigel found it, we built our own version around it. Vibecoded by his own admission — so credit's probably owed to whichever model wrote that too. We're not going to be the ones to gatekeep it.</div>
       </div>
       <div class="credit-card">
         <div class="credit-role">Theme Inspiration</div>
-        <div class="credit-name" style="font-size:0.95rem">13 Themes, 13 People</div>
+        <div class="credit-name" style="font-size:0.95rem">14 Themes, 14 People</div>
         <div class="credit-desc" style="margin-bottom:.85rem">None of them are affiliated with GucciBot in any capacity. All of them have an extension named after them anyway.</div>
         <div style="display:flex;flex-direction:column;gap:.55rem;font-size:0.68rem;color:var(--muted);line-height:1.5">
           <div><strong style="color:var(--white);font-weight:400">Toosii</strong> &mdash; <code>.toosii</code>. LSU, Syracuse, Sac State. The music goes hard.</div>
@@ -1032,6 +1022,7 @@
           <div><strong style="color:var(--white);font-weight:400">Rick Ross</strong> &mdash; <code>.maybach</code>. Maybach Music. Platinum and black. Huh.</div>
           <div><strong style="color:var(--white);font-weight:400">Tony Romo</strong> &mdash; <code>.romo</code>. Silver and navy. He called the play before it happened.</div>
           <div><strong style="color:var(--white);font-weight:400">Tee Grizzley</strong> &mdash; <code>.grizzley</code>. First Day Out. Flare red and steel black.</div>
+          <div><strong style="color:var(--white);font-weight:400">Tech N9ne</strong> &mdash; <code>.redkingdom</code>. Pulsing red and black. &ldquo;I don&rsquo;t practice. I conquer.&rdquo;</div>
           <div><strong style="color:var(--white);font-weight:400">Waka Flocka Flame</strong> &mdash; <code>.waka</code>. Grove green and black. Brick Squad. Grove St. Party.</div>
           <div><strong style="color:var(--white);font-weight:400">Blac Youngsta</strong> &mdash; <code>.youngsta</code>. Black and red, straight off the 223 cover. Everyday's my birthday.</div>
           <div><strong style="color:var(--white);font-weight:400">Speaker Knockerz</strong> &mdash; <code>.knockerz</code>. Teal and black. Two Step. Bow Bow Bow.</div>
