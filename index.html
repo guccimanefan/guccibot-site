@@ -168,7 +168,7 @@
         <li><span><span class="engine-highlight">Prevent death</span> — the bot intercepts the destroy call before the player actually dies and backsteps instead. Noclip without the visual pass-through. Physics stay intact. The level keeps running.</span></li>
         <li><span><span class="engine-highlight">Noclip</span> — full noclip with death flash, accuracy percentage display, and an auto-disable threshold. Set it to disable at 97% and it disengages automatically. Or leave it on and just vibe.</span></li>
         <li><span><span class="engine-highlight">Noclip accuracy display</span> — shows what percentage of the level you got through before dying. Optional. Visible in the HUD. Updates in real time. Pairs with the threshold.</span></li>
-        <li><span><span class="engine-highlight">Autoclicker</span> — configurable hold and release tick counts. Stores as GBR6 Type C — 4 bytes no matter how long the level. The description of the pattern is stored, not the output. This is unique to GucciBot publicly.</span></li>
+        <li><span><span class="engine-highlight">Autoclicker</span> — fully independent Hold Ticks, Release Ticks, and Clicks Per Hold per player, matching Silicate's own model, with a one-shot sync button between them. Stores as GBR6 Type C — 4 bytes no matter how long the level. The description of the pattern is stored, not the output. This is unique to GucciBot publicly.</span></li>
         <li><span><span class="engine-highlight">Frame advance and frame stepping</span> — pause the physics loop and step forward one frame at a time. Useful for precise input placement, for debugging, for watching a crash in slow motion with full composure.</span></li>
         <li><span><span class="engine-highlight">Hotkeys for everything</span> — every feature has a rebindable hotkey. Toggle noclip mid-run. Toggle recording. Frame advance. Backwards step. Intentional death. All keybindable. None of them conflict with GD unless you set them to.</span></li>
         <li><span><span class="engine-highlight">Layout mode</span> — strips the visual layer. Background becomes flat. Ground becomes flat. Decorative objects become invisible. The physics still run. You see the geometry, nothing else. Pure.</span></li>
@@ -726,6 +726,34 @@
         <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">— LockedIn2026&#x204E;</div>
         <div style="font-size:0.45rem;color:#333;margin-top:.25rem">&#x204E; Jimmy Butler has not endorsed this extension. He also has not been asked.</div>
       </div>
+
+      <div style="background:var(--near-black);padding:2rem;border-top:1px solid rgba(212,175,55,0.12)">
+        <div style="color:var(--gold);font-size:0.8rem;letter-spacing:3px;margin-bottom:1rem">★★★★★</div>
+        <div style="font-size:0.8rem;color:#ccc;line-height:1.8;font-style:italic;margin-bottom:1.25rem">&ldquo;Autoclicker finally gave Player 2 their own Hold Ticks instead of copying mine. Revolutionary. My second player has been asking for independence for years. Years.&rdquo;</div>
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">— TwoPlayerLevelEnjoyer&#x204E;</div>
+        <div style="font-size:0.45rem;color:#333;margin-top:.25rem">&#x204E; Player 2 was not consulted for this quote. Player 2 is not a real person. This is one player.</div>
+      </div>
+
+      <div style="background:var(--near-black);padding:2rem;border-top:1px solid rgba(212,175,55,0.12)">
+        <div style="color:var(--gold);font-size:0.8rem;letter-spacing:3px;margin-bottom:1rem">★★★★★</div>
+        <div style="font-size:0.8rem;color:#ccc;line-height:1.8;font-style:italic;margin-bottom:1.25rem">&ldquo;Alignment-Independent re-checks the click BEFORE the one you're worried about. I didn't know I needed that until Calculate told me my real problem was two clicks earlier. Humbling. Accurate. Humbling because it was accurate.&rdquo;</div>
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">— TwoClicksEarlier&#x204E;</div>
+        <div style="font-size:0.45rem;color:#333;margin-top:.25rem">&#x204E; This is genuinely what the algorithm does. We are not exaggerating for once.</div>
+      </div>
+
+      <div style="background:var(--near-black);padding:2rem;border-top:1px solid rgba(212,175,55,0.12)">
+        <div style="color:var(--gold);font-size:0.8rem;letter-spacing:3px;margin-bottom:1rem">★★★★★</div>
+        <div style="font-size:0.8rem;color:#ccc;line-height:1.8;font-style:italic;margin-bottom:1.25rem">&ldquo;WakaBot green hits different at 2am. I don't know what else to tell you. Grove St. energy. Turned up mid-recording. Got the level. Coincidence? I choose to believe not.&rdquo;</div>
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">— GroveStreetGD&#x204E;</div>
+        <div style="font-size:0.45rem;color:#333;margin-top:.25rem">&#x204E; The theme does not affect physics. We have checked. Multiple times. People keep asking.</div>
+      </div>
+
+      <div style="background:var(--near-black);padding:2rem;border-top:1px solid rgba(212,175,55,0.12)">
+        <div style="color:var(--gold);font-size:0.8rem;letter-spacing:3px;margin-bottom:1rem">★★★★★</div>
+        <div style="font-size:0.8rem;color:#ccc;line-height:1.8;font-style:italic;margin-bottom:1.25rem">&ldquo;It's public now. I don't have to explain to people in the server chat why I have a bot they can't get. This was genuinely stressful for me. Thank you for my newfound social peace.&rdquo;</div>
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">— UsedToLieAboutIt&#x204E;</div>
+        <div style="font-size:0.45rem;color:#333;margin-top:.25rem">&#x204E; We're not sure what he was lying about specifically. He didn't elaborate. We didn't ask twice.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -751,7 +779,7 @@
       </div>
 
       <div style="background:var(--black);padding:2.5rem 2rem">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);letter-spacing:2px;line-height:1">17</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);letter-spacing:2px;line-height:1">20</div>
         <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.5rem">Themes</div>
         <div style="font-size:0.5rem;color:#333;margin-top:.4rem">all drip. no exceptions.</div>
       </div>
@@ -771,9 +799,9 @@
         <div style="font-size:0.5rem;color:#333;margin-top:.4rem">counted them. every single one is in the engine list above. go look.</div>
       </div>
       <div style="background:var(--black);padding:2.5rem 2rem">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);letter-spacing:2px;line-height:1">6</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);letter-spacing:2px;line-height:1">18</div>
         <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.5rem">File Extensions</div>
-        <div style="font-size:0.5rem;color:#333;margin-top:.4rem">.brrr .toosii .ja .giddey .bam .sexyy — all gbr6. all drip.</div>
+        <div style="font-size:0.5rem;color:#333;margin-top:.4rem">.brrr .toosii .ja .giddey .bam .sexyy .waka .youngsta .knockerz + 9 more — all gbr6. all drip.</div>
       </div>
       <div style="background:var(--black);padding:2.5rem 2rem">
         <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);letter-spacing:2px;line-height:1">4</div>
