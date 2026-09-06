@@ -1,6 +1,6 @@
 // Marquee
 const items = [
-  'GBR6','Frame Perfect','Silicate Engine','17 Themes','4 Disciplines',
+  'GBR6','Frame Perfect','Silicate Engine','20 Themes','4 Disciplines',
   'Brrr.','TPS 240','Backwards Stepping','SSB Fix','Lock Delta',
   'Type C Delta','Autoclicker','Noclip','Macro Diff','Brrr.',
   '.brrr','.toosii','.ja','.giddey','.bam','.sexyy','.juice','.butler',

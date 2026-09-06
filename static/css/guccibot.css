@@ -556,6 +556,18 @@
   .t-brrr     .bg-accent { background: #94d9fa; }
   .t-brrr     .theme-name { color: #b3e6fb; }
 
+  .t-waka     { background: #050d07; color: #f4faf4; }
+  .t-waka     .bg-accent { background: #34c74d; }
+  .t-waka     .theme-name { color: #8fe09d; }
+
+  .t-youngsta { background: #000000; color: #faf5f5; }
+  .t-youngsta .bg-accent { background: #ff0000; }
+  .t-youngsta .theme-name { color: #ff7373; }
+
+  .t-knockerz { background: #040f0e; color: #effbf9; }
+  .t-knockerz .bg-accent { background: #12c7b8; }
+  .t-knockerz .theme-name { color: #7de0d8; }
+
   /* ── ENGINE SECTION ── */
   .engine-split {
     display: grid;
@@ -566,7 +578,7 @@
   }
 
   @media (max-width: 700px) {
-    .t-gucci, .t-toosii, .t-toosii2, .t-toosii3, .t-ja, .t-giddey, .t-bam, .t-sexyy, .t-juice, .t-butler, .t-saweetie, .t-maybach, .t-romo, .t-grizzley, .t-redkingdom, .t-lemonade, .t-brrr { transform: none !important; }
+    .t-gucci, .t-toosii, .t-toosii2, .t-toosii3, .t-ja, .t-giddey, .t-bam, .t-sexyy, .t-juice, .t-butler, .t-saweetie, .t-maybach, .t-romo, .t-grizzley, .t-redkingdom, .t-lemonade, .t-brrr, .t-waka, .t-youngsta, .t-knockerz { transform: none !important; }
     .reveal[style*="grid-template-columns:340px"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
 
     .engine-split { grid-template-columns: 1fr; }
