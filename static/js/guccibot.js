@@ -66,7 +66,7 @@ document.querySelectorAll('.feature-grid.reveal, .themes-grid.reveal, .credits-g
 // /dropped/ itself still exists as a real standalone page (for direct
 // links) and keeps its own fallback for that case, since a direct
 // visit genuinely has no prior gesture to reuse.
-const DROPPED_VIDEO_URL = 'https://github.com/guccimanefan/guccibot-site/releases/download/site-video/0901.1.mp4';
+const DROPPED_VIDEO_URL = 'https://github.com/Nigelx1/guccibot-site/releases/download/site-video/0901.1.mp4';
 
 function showDropped() {
   if (document.getElementById('dropped-overlay')) return; // already showing
