@@ -96,7 +96,12 @@
   <div class="changelog-list reveal">
 
     <div class="changelog-entry">
-      <div class="changelog-version">1.6.3 <span class="current-tag">Current</span></div>
+      <div class="changelog-version">1.6.4 <span class="current-tag">Current</span></div>
+      <div class="changelog-body">Two real crashes, both from community bug reports rather than Nigel&rsquo;s own testing. Saving a macro under a custom theme wrote a filename with no extension at all, so it saved fine but silently vanished from every macro list on the next refresh &mdash; the theme-extension getter was dropping its leading dot. And clicking Import (sounds/images on the Frame Window, folder import, trainer music, or a custom theme&rsquo;s audio) a second time before the first file-picker dialog closed could crash the game outright, since nothing stopped the second click from destroying the first pick while it was still waiting on the OS dialog. A real crash log (GitHub issue #1) made the second one possible to actually pin down instead of guess at.</div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-version">1.6.3</div>
       <div class="changelog-body">A rename, not a feature. Nigel changed his GitHub username from guccimanefan to Nigelx1 and asked for the old handle dropped everywhere, not just on GitHub &mdash; the mod&rsquo;s own id (<code>nigelx1.guccibot</code>, was <code>guccimanefan.guccibot</code>), the developer field, the in-game Credits tab, the README, and every mention on this site itself. Existing installs of the old id keep working as-is; grabbing this version means installing fresh under the new id rather than an in-place update, since Geode treats a changed id as a different mod.</div>
     </div>
 
