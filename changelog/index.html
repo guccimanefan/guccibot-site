@@ -96,7 +96,12 @@
   <div class="changelog-list reveal">
 
     <div class="changelog-entry">
-      <div class="changelog-version">1.6.4 <span class="current-tag">Current</span></div>
+      <div class="changelog-version">1.6.5 <span class="current-tag">Current</span></div>
+      <div class="changelog-body">A follow-up to 1.6.4&rsquo;s file-picker crash fix. That fix stopped clicking the same Import button twice in a row from crashing the game, but &ldquo;Import Sounds/Images&rdquo; and &ldquo;Import Folder&rdquo; sit right next to each other on the Frame Window settings page, and clicking one, then the other, wasn&rsquo;t covered &mdash; a real sequence if the first click&rsquo;s dialog opened behind the game window with no visible cue. Every file-picker button on that page (and trainer music import) now checks that none of the others are already waiting on a dialog before starting a new one.</div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-version">1.6.4</div>
       <div class="changelog-body">Two real crashes, both from community bug reports rather than Nigel&rsquo;s own testing. Saving a macro under a custom theme wrote a filename with no extension at all, so it saved fine but silently vanished from every macro list on the next refresh &mdash; the theme-extension getter was dropping its leading dot. And clicking Import (sounds/images on the Frame Window, folder import, trainer music, or a custom theme&rsquo;s audio) a second time before the first file-picker dialog closed could crash the game outright, since nothing stopped the second click from destroying the first pick while it was still waiting on the OS dialog. A real crash log (GitHub issue #1) made the second one possible to actually pin down instead of guess at.</div>
     </div>
 
